@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140505205757) do
+ActiveRecord::Schema.define(version: 20140505210556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,9 +35,10 @@ ActiveRecord::Schema.define(version: 20140505205757) do
     t.date    "acquired_at"
     t.text    "notes"
     t.date    "released_at"
-    t.text    "category"
+    t.text    "category",    null: false
   end
 
+  add_index "vehicles", ["category"], name: "index_vehicles_on_category", using: :btree
   add_index "vehicles", ["vin"], name: "index_vehicles_on_vin", unique: true, using: :btree
 
 end
