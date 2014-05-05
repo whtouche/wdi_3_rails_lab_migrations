@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140505211340) do
+ActiveRecord::Schema.define(version: 20140505212023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,13 +31,11 @@ ActiveRecord::Schema.define(version: 20140505211340) do
     t.text    "model"
     t.text    "color"
     t.integer "year"
-    t.text    "vin",                                 null: false
+    t.text    "vin",         null: false
     t.date    "acquired_at"
     t.text    "notes"
     t.date    "released_at"
-    t.text    "category",                            null: false
-    t.decimal "fee",         precision: 8, scale: 2
-    t.boolean "is_paid"
+    t.text    "category",    null: false
   end
 
   add_index "vehicles", ["category"], name: "index_vehicles_on_category", using: :btree
