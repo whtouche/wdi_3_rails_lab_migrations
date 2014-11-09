@@ -31,11 +31,11 @@ ActiveRecord::Schema.define(version: 20140624163710) do
     t.text    "model"
     t.text    "color"
     t.integer "year"
-    t.text    "vin",                              null: false
+    t.text    "vin",              null: false
     t.date    "acquisition_date"
     t.text    "notes"
     t.date    "date_picked_up"
-    t.boolean "is_motorcycle",    default: false
+    t.text    "vehicle_type"
   end
 
   add_index "vehicles", ["vin"], name: "index_vehicles_on_vin", unique: true, using: :btree

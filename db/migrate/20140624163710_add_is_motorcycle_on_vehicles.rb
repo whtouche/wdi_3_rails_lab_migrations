@@ -2,7 +2,7 @@ class AddIsMotorcycleOnVehicles < ActiveRecord::Migration
 
   def change
     change_table :vehicles do |t|
-      t.boolean :is_motorcycle, default: false
+      t.text :vehicle_type
     end
   end
 end
